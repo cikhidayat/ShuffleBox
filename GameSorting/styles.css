@@ -1,0 +1,215 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    background-image: url('bg.jpg');
+    margin: 0;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+}
+
+@media only screen and (max-width:930px){
+	.card {
+	    width: 60px !important;
+        height: 90px !important;
+        background-image: url('card-back-sm.jpg') !important;
+    }
+    .card.flipped {
+        background-image: url('card-sm.jpg') !important;
+    }
+}
+
+#title {
+    margin-bottom: 70px;
+}
+
+.main-choose {
+    font-size: 25px;
+    color: rgb(255, 244, 83);
+}
+
+#info-left {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#info-right {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: right;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#game-container, #menu-container {
+    text-align: center;
+    position: relative;
+}
+
+#win-message {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(247, 219, 96);
+}
+
+#cards {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.card {
+    width: 80px;
+    height: 120px;
+    background-image: url('card-back.jpg');
+    border: 1px solid #333;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    position: relative;
+}
+
+.card.selected {
+    transform: scale(1.1);
+    border-color: red;
+    background-color: #ffe0e0;
+}
+
+.card.flipped {
+    background-image: url('card.jpg');
+    color: #000;
+    border-color: #333;
+}
+
+.card.disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+@keyframes swap {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(100px); }
+    100% { transform: translateX(0); }
+}
+
+.card.swapping {
+    animation: swap 0.5s ease;
+}
+
+#swap-button, #continue-button, #menu-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.popup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.popup-content input {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 80%;
+}
+
+/* CSS Button */
+.button-19 {
+  appearance: button;
+  background-color: #360101;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.button-19:after {
+  background-clip: padding-box;
+  background-color: #770404;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.button-19:main,
+.button-19:focus {
+  user-select: auto;
+}
+
+.button-19:hover:not(:disabled) {
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
+}
+
+.button-19:disabled {
+  cursor: auto;
+}
+
+.button-19:active {
+  border-width: 4px 0 0;
+  background: none;
+}
